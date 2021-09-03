@@ -37,5 +37,13 @@ def newBrad():
         print("Take ", b, "of your proteins")
         # SDS amount
         print("Add", b/5, "of SDS")
+        
 
+                
 newBrad()
+
+l = True
+while l == "y":
+        l = raw_input("Scrivi waulcosa: ")
+        newBrad()
+        
