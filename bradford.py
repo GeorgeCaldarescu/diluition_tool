@@ -1,4 +1,4 @@
-def newBrad():
+def Brad():
         while True:
                 od = float(input("write OD: ")) *10
                 conc = float(input("What concentration in ng you want: "))
@@ -17,4 +17,4 @@ def newBrad():
                         break
 
                 
-newBrad()
+Brad()
