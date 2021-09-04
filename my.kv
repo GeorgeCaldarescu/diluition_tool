@@ -1,16 +1,42 @@
-<Button>:
-    font_size: 20
-    color: 0.3, 0.6, 0.7, 1
-    size_hint: 0.3, 0.3
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
 
-<FloatLayout>:
-    Button:
-        pos_hint: {"x":0.15, "top":0.6}   # the order is this {"x", "y", "top", "bottom", "left", "right"} and take value only from 0 to 1
-        text: "Bradford assay"
+<MainWindow>:
+    name: "main"
 
-    
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Dilution tool"
+
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Agrobacteria"
+                on_release: 
+                    app.root.current= "Agro"
+                    root.manager.transition.direction = "right"
+            
+            Button:
+                text: "Bradford"    
+                on_release: 
+                    app.root.current= "Bradford"
+                    root.manager.transition.direction = "left"
+
+<SecondWindow>:
+    name: "Agro"
     Button:
-        pos_hint: {"x": 0.55, "top":0.6}
-        text: "Agrobacteria"
-    Label:
-        text: "v1.3"
+        text: "Go back"
+        on_release: 
+            app.root.current= "main"
+            root.manager.transition.direction = "left"
+
+<ThirdWindow>:
+    name: "Bradford"
+    Button:
+        text: "Go back"
+        on_release: 
+            app.root.current= "main"
+            root.manager.transition.direction = "right"
