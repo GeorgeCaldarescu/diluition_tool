@@ -1,6 +1,6 @@
-# call more function
+# v1.1
 
-class the_process():
+class dilution():
     def Agro():
         while True:
             conc = float(input("Please choose between 0.03 and 0.05 (for P19): " ))
@@ -26,7 +26,7 @@ class the_process():
         while True:
                 od = float(input("write OD: ")) *10
                 conc = float(input("What concentration in ng you want: "))
-                a = a = ((od * 0.8847+0.128)*1000)
+                a = a = ((od * 0.8847+0.128)*1000) # must be update yearly, check readme file
         
                 # is the protein amount
                 b = (conc/a) * 1000
@@ -40,9 +40,9 @@ class the_process():
                         print("Good luck with the Western :)")
                         break
     
-    the_route = int(input("For Agro quantification please type 1 \nFor Bradford quantification type 2  \n"))
+    input = int(input("For Agro quantification please type 1 \nFor Bradford quantification type 2  \n"))
 
-    if the_route == 1:
+    if input == 1:
         Agro()
     else:
         Brad()
