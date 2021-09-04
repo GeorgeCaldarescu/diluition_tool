@@ -46,5 +46,3 @@ class the_process():
 
 
 
-# now is working, when I will finish with all of them I can delete the upper part of the code (the commented one)
-
