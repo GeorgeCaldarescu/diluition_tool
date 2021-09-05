@@ -13,7 +13,7 @@ WindowManager:
             size: self.texture_size
             halign: "center"
             font_size: self.width/30
-            pos_hint:{"x":0.01,"y":0.3}
+            pos_hint: {"x":0.01,"y":0.3}
         
         Button:
             text: "Agrobacteria"
@@ -41,7 +41,9 @@ WindowManager:
                 root.manager.transition.direction = "left"
 
 <SecondWindow>:
-    name: "Agro"
+    name : "Agro"
+    agro: agro
+    od: od
     
     FloatLayout:
 
@@ -61,7 +63,59 @@ WindowManager:
         
         TextInput:
             multiline: False
-            id: AgroConc
+            id: agro
+            input_filter: "float"
+            size_hint: 0.1, 0.1
+            pos_hint:{"x":0.7,"top":0.85}
+
+        Label: 
+            text: "Write OD value"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/30
+            pos_hint:{"x":0.05,"y":0.05}
+        
+        TextInput:
+            multiline: False
+            id: od
+            input_filter: "float"
+            size_hint: 0.1, 0.1
+            pos_hint:{"x":0.7,"top":0.60}
+        
+        Button:
+            text: "Calculate"
+            size_hint: 0.1, 0.1
+            pos_hint: {"x": 0.7, "top":0.40}
+            on_release:
+                root.btn()
+   
+
+
+
+
+
+<ThirdWindow>:
+    name: "Bradford"
+    id: Bradford
+     
+    FloatLayout:
+        
+        Button:
+            text: "Go back"
+            size_hint: 0.1, 0.1
+            on_release: 
+                app.root.current= "main"
+                root.manager.transition.direction = "right"
+        Label: 
+            text: "Write the desired protein concentration"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/30
+            pos_hint:{"x":0.05,"y":0.3}
+            
+        TextInput:
+            multiline: False
+            id: ng
             input_type: "number"
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.85}
@@ -80,20 +134,7 @@ WindowManager:
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.60}
         
-   
-
-
-
-
-
-<ThirdWindow>:
-    name: "Bradford"
-     
-    FloatLayout:
-        
         Button:
-            text: "Go back"
+            text: "Calculate"
             size_hint: 0.1, 0.1
-            on_release: 
-                app.root.current= "main"
-                root.manager.transition.direction = "right"
+            pos_hint: {"x": 0.7, "top":0.40}
