@@ -3,40 +3,59 @@ WindowManager:
     SecondWindow:
     ThirdWindow:
 
+# <ThirdWindow>:
+#     name: "Bradford"
+#     Button:
+#         text: "Go back"
+#         on_release: 
+#             app.root.current= "main"
+#             root.manager.transition.direction = "right"
+
+
 <MainWindow>:
     name: "main"
-
-    GridLayout:
-        cols: 1
+    
+    FloatLayout:
         Label:
-            text: "Dilution tool"
-
-        GridLayout:
-            cols: 2
-            Button:
-                text: "Agrobacteria"
-                on_release: 
-                    app.root.current= "Agro"
-                    root.manager.transition.direction = "right"
-            
-            Button:
-                text: "Bradford"    
-                on_release: 
-                    app.root.current= "Bradford"
-                    root.manager.transition.direction = "left"
+            text: "Diluition tool for transient tobacco transformation and Bradford assay"
+            font_size: 20
+            pos_hint:{"y":0.3}
+        
+        Button:
+            text: "Agrobacteria"
+            size_hint: 0.3, 0.3
+            pos_hint: {"x": 0.15, "y":0.2}
+            on_release: 
+                app.root.current= "Agro"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Bradford"
+            size_hint: 0.3, 0.3
+            pos_hint: {"x": 0.55, "y":0.2}
+            on_release: 
+                app.root.current= "Bradford"
+                root.manager.transition.direction = "left"
 
 <SecondWindow>:
     name: "Agro"
-    Button:
-        text: "Go back"
-        on_release: 
-            app.root.current= "main"
-            root.manager.transition.direction = "left"
+    
+    FloatLayout:
+
+        Button:
+            text: "Go back"
+            size_hint: 0.1, 0.1
+            on_release: 
+                app.root.current= "main"
+                root.manager.transition.direction = "left"
+
 
 <ThirdWindow>:
     name: "Bradford"
-    Button:
-        text: "Go back"
-        on_release: 
-            app.root.current= "main"
-            root.manager.transition.direction = "right"
+     
+    FloatLayout:
+        Button:
+            text: "Go back"
+            size_hint: 0.1, 0.1
+            on_release: 
+                app.root.current= "main"
+                root.manager.transition.direction = "right"

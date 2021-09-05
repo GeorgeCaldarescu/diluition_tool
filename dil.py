@@ -2,7 +2,7 @@ import kivy
 from kivy.app import App
 from kivy.lang import Builder  # this one is useful to load kv files whatever the name is
 from kivy.uix.screenmanager import ScreenManager, Screen
-
+from kivy.uix.label import Label
 
 class MainWindow(Screen):
     pass
