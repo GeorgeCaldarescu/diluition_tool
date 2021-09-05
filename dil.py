@@ -16,7 +16,8 @@ class SecondWindow(Screen):
   def btn(self):
       a = (float(self.od.text)*50)/float(self.agro.text)
       b = (500/a)*4
-      print(b)
+      self.result.text = "Your volume to add to 2ml is :", {b}
+      
 
     # clean the form need to think about. maybe a can make a reset button with a clean function inside
         

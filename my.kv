@@ -44,6 +44,7 @@ WindowManager:
     name : "Agro"
     agro: agro
     od: od
+    result: result
     
     FloatLayout:
 
@@ -80,13 +81,21 @@ WindowManager:
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.60}
         
+        Label:
+            id: result
+            text: "No result"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/30
+            pos_hint:{"x":0.05, "y": -0.15}
+        
         Button:
             text: "Calculate"
             size_hint: 0.1, 0.1
             pos_hint: {"x": 0.7, "top":0.40}
             on_release:
                 root.btn()
-   
+        
 
 
 
