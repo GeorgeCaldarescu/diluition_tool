@@ -16,7 +16,7 @@ class SecondWindow(Screen):
   def btn(self):
       a = (float(self.od.text)*50)/float(self.agro.text)
       b = (500/a)*4
-      self.result.text = "Your volume to add to 2ml is :", {b}
+      self.result.text = f'Your volume to add to 2ml is : {round(b,2)}' 
       
 
     # clean the form need to think about. maybe a can make a reset button with a clean function inside
@@ -32,9 +32,10 @@ class ThirdWindow(Screen):
         
         a = (fOd * 0.8847 + 0.128) * 1000
         b = (fConc/a) * 1000
+        n = '\n'    # is only a variable to have a new line in f-strings
         print("Amount of protein to take to have", fConc,"ng is", b)
         print("You need to add", b/5, "SDS before load the samples")    
-        
+        self.result.text = f'Amount of protein for {fConc}ng is {round(b,2)} {n}You need to add {round(b/5,2)} SDS before load'
 
 
 class WindowManager(ScreenManager):
