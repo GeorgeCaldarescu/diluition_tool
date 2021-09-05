@@ -64,7 +64,6 @@ WindowManager:
         TextInput:
             multiline: False
             id: agro
-            input_filter: "float"
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.85}
 
@@ -78,7 +77,6 @@ WindowManager:
         TextInput:
             multiline: False
             id: od
-            input_filter: "float"
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.60}
         
@@ -96,8 +94,9 @@ WindowManager:
 
 <ThirdWindow>:
     name: "Bradford"
-    id: Bradford
-     
+    conc: conc
+    odB: odB
+
     FloatLayout:
         
         Button:
@@ -115,8 +114,7 @@ WindowManager:
             
         TextInput:
             multiline: False
-            id: ng
-            input_type: "number"
+            id: conc
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.85}
 
@@ -129,8 +127,7 @@ WindowManager:
         
         TextInput:
             multiline: False
-            id: odAgro
-            input_type: "number"
+            id: odB
             size_hint: 0.1, 0.1
             pos_hint:{"x":0.7,"top":0.60}
         
@@ -138,3 +135,5 @@ WindowManager:
             text: "Calculate"
             size_hint: 0.1, 0.1
             pos_hint: {"x": 0.7, "top":0.40}
+            on_release:
+                root.btnBrad()

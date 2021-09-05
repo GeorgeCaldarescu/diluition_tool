@@ -18,8 +18,22 @@ class SecondWindow(Screen):
       b = (500/a)*4
       print(b)
 
+    # clean the form need to think about. maybe a can make a reset button with a clean function inside
+        
+
 class ThirdWindow(Screen):
-    pass
+    conc = ObjectProperty(None)
+    odB = ObjectProperty(None)
+
+    def btnBrad(self):
+        fConc = float(self.conc.text)
+        fOd = float(self.odB.text)*10
+        
+        a = (fOd * 0.8847 + 0.128) * 1000
+        b = (fConc/a) * 1000
+        print("Amount of protein to take to have", fConc,"ng is", b)
+        print("You need to add", b/5, "SDS before load the samples")    
+        
 
 
 class WindowManager(ScreenManager):
