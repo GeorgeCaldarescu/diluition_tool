@@ -14,7 +14,9 @@ class SecondWindow(Screen):
   od = ObjectProperty(None)
 
   def btn(self):
-      print("conc:" , type(float(self.agro.text)), "OD:",type(float(self.od.text)))
+      a = (float(self.od.text)*50)/float(self.agro.text)
+      b = (500/a)*4
+      print(b)
 
 class ThirdWindow(Screen):
     pass
