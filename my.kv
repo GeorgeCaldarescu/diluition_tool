@@ -3,26 +3,25 @@ WindowManager:
     SecondWindow:
     ThirdWindow:
 
-# <ThirdWindow>:
-#     name: "Bradford"
-#     Button:
-#         text: "Go back"
-#         on_release: 
-#             app.root.current= "main"
-#             root.manager.transition.direction = "right"
-
-
 <MainWindow>:
     name: "main"
     
     FloatLayout:
         Label:
             text: "Diluition tool for transient tobacco transformation and Bradford assay"
-            font_size: 20
-            pos_hint:{"y":0.3}
+            text_size: root.width, None
+            size: self.texture_size
+            halign: "center"
+            font_size: self.width/30
+            pos_hint:{"x":0.01,"y":0.3}
         
         Button:
             text: "Agrobacteria"
+            halign: "center"
+            valign: "center"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/10
             size_hint: 0.3, 0.3
             pos_hint: {"x": 0.15, "y":0.2}
             on_release: 
@@ -30,6 +29,11 @@ WindowManager:
                 root.manager.transition.direction = "right"
         Button:
             text: "Bradford"
+            halign: "center"
+            valign: "center"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/10
             size_hint: 0.3, 0.3
             pos_hint: {"x": 0.55, "y":0.2}
             on_release: 
@@ -43,16 +47,50 @@ WindowManager:
 
         Button:
             text: "Go back"
-            size_hint: 0.1, 0.1
+            size_hint: 0.1, 0.1    
             on_release: 
                 app.root.current= "main"
                 root.manager.transition.direction = "left"
+
+        Label: 
+            text: "Write the desired agro concentration"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/30
+            pos_hint:{"x":0.05,"y":0.3}
+        
+        TextInput:
+            multiline: False
+            id: AgroConc
+            input_type: "number"
+            size_hint: 0.1, 0.1
+            pos_hint:{"x":0.7,"top":0.85}
+
+        Label: 
+            text: "Write OD value"
+            text_size: root.width, None
+            size: self.texture_size
+            font_size: self.width/30
+            pos_hint:{"x":0.05,"y":0.05}
+        
+        TextInput:
+            multiline: False
+            id: odAgro
+            input_type: "number"
+            size_hint: 0.1, 0.1
+            pos_hint:{"x":0.7,"top":0.60}
+        
+   
+
+
+
 
 
 <ThirdWindow>:
     name: "Bradford"
      
     FloatLayout:
+        
         Button:
             text: "Go back"
             size_hint: 0.1, 0.1

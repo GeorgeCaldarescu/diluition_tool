@@ -8,7 +8,8 @@ class MainWindow(Screen):
     pass
 
 class SecondWindow(Screen):
-    pass
+    def btn():
+        print(self.AgroConc.text)
 
 class ThirdWindow(Screen):
     pass
