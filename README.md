@@ -23,5 +23,10 @@ in the code you find this equation: **od*0.8847 + 0.128**  --> y = mx + q
 *Changes:* 
 Basically I skimmed a bit the code. Changed from the first crazy *for loop* to *while*
 
+**v1.2**
+
+*Changes:*
+I created the interface, now is running on windows with a GUI. I also create a beta of android version
+
 
 
